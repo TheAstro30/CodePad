@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CodePad
+namespace CodePad.Forms
 {
-    public partial class Form1 : Form
+    public partial class FrmAbout : Form
     {
-        public Form1()
+        public FrmAbout()
         {
             InitializeComponent();
         }

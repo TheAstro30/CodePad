@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePad", "CodePad\CodePad.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fctblib", "fctblib\fctblib.csproj", "{F202B017-BEF7-47F8-BD3A-DAB611BC0DDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corelib", "corelib\corelib.csproj", "{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{F202B017-BEF7-47F8-BD3A-DAB611BC0DDB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F202B017-BEF7-47F8-BD3A-DAB611BC0DDB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F202B017-BEF7-47F8-BD3A-DAB611BC0DDB}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3F22611C-70E1-4CC9-8085-4B9B62BF73EF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
