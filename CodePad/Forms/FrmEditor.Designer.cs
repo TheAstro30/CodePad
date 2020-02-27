@@ -34,6 +34,9 @@
             this.itmNew = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.mdiTab = new corelib.Controls.MdiTab.MdiTabStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.itmOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +55,10 @@
             // mnuFile
             // 
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itmNew});
+            this.itmNew,
+            this.toolStripMenuItem1,
+            this.itmOpen,
+            this.toolStripMenuItem2});
             this.mnuFile.Name = "mnuFile";
             this.mnuFile.Size = new System.Drawing.Size(37, 20);
             this.mnuFile.Text = "&File";
@@ -60,7 +66,7 @@
             // itmNew
             // 
             this.itmNew.Name = "itmNew";
-            this.itmNew.Size = new System.Drawing.Size(98, 22);
+            this.itmNew.Size = new System.Drawing.Size(152, 22);
             this.itmNew.Text = "New";
             this.itmNew.Click += new System.EventHandler(this.itmNew_Click);
             // 
@@ -81,6 +87,27 @@
             this.mdiTab.ShowItemToolTips = false;
             this.mdiTab.Size = new System.Drawing.Size(705, 25);
             this.mdiTab.TabIndex = 2;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // itmOpen
+            // 
+            this.itmOpen.Name = "itmOpen";
+            this.itmOpen.ShortcutKeyDisplayString = "Ctrl+O";
+            this.itmOpen.Size = new System.Drawing.Size(152, 22);
+            this.itmOpen.Text = "Open";
+            this.itmOpen.Click += new System.EventHandler(this.itmOpen_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.ShortcutKeyDisplayString = "Ctrl+S";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Text = "Save";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // FrmEditor
             // 
@@ -110,6 +137,9 @@
         private System.Windows.Forms.ToolStripMenuItem itmNew;
         private corelib.Controls.MdiTab.MdiTabStrip mdiTab;
         private System.Windows.Forms.StatusStrip statusBar;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem itmOpen;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
 
 
     }

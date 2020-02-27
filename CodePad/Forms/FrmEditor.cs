@@ -36,7 +36,7 @@ namespace CodePad.Forms
 
         protected override void OnLoad(EventArgs e)
         {
-            /* Enumerate recently opened file(s) list and reopen documentsv */
+            /* Enumerate recently opened file(s) list and reopen documents */
             CreateTab();
             base.OnLoad(e);
         }
@@ -82,18 +82,76 @@ namespace CodePad.Forms
             CreateTab();
         }
 
+        private void itmOpen_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFile(GetActiveDocument());
+        }
+
+        /* File operations */
+        private void OpenFile()
+        {
+            using (var ofd = new OpenFileDialog{Title = @"Select a file to open"})
+            {
+                if (ofd.ShowDialog(this) == DialogResult.Cancel)
+                {
+                    return;
+                }
+                var info = new FileInfo(ofd.FileName);
+                CreateTab(info);
+            }
+        }
+
+        private void SaveFile(FrmDocument f)
+        {
+            if (f == null)
+            {
+                return;
+            }
+            if (f.Text == @"Untitled.txt")
+            {
+                SaveFileAs(f);
+                return;
+            }
+            f.SaveDocumentText(f.CurrentFileInfo);
+        }
+
+        private void SaveFileAs(FrmDocument f)
+        {
+            if (f == null)
+            {
+                return;
+            }
+            using (var sfd = new SaveFileDialog{Title = @"Select the file to save"})
+            {
+                if (sfd.ShowDialog(this) == DialogResult.Cancel)
+                {
+                    return;
+                }
+                var info = new FileInfo(sfd.FileName);
+                f.CurrentFileInfo = info;
+                f.SaveDocumentText(info);
+            }
+        }
+
         /* Private methods */
         private void CreateTab(FileInfo fileInfo)
         {
-            CreateTab(Path.GetFileName(fileInfo.FullName));
+            var f = CreateTab(Path.GetFileName(fileInfo.FullName));
+            /* Now, load the file into the text box */
+            f.LoadDocumentText(fileInfo);
         }
 
-        private void CreateTab(string name = @"Untitled.txt")
+        private FrmDocument CreateTab(string name = @"Untitled.txt")
         {
-            NewDocumentWindow(name);
+            return NewDocumentWindow(name);
         }
 
-        private void NewDocumentWindow(string name)
+        private FrmDocument NewDocumentWindow(string name)
         {
             var f = new FrmDocument
                         {
@@ -101,6 +159,25 @@ namespace CodePad.Forms
                             MdiParent = this
                         };
             f.Show();
+            f.Box.TextChangedDelayed += TextBoxTextChanged;
+            return f;
+        }
+
+        private FrmDocument GetActiveDocument()
+        {
+            var f = (FrmDocument)ActiveMdiChild;
+            return f;
+        }
+
+        /* Callbacks */
+        private void TextBoxTextChanged(object sender, EventArgs e)
+        {
+            /* We use this event to update the status bar */
+        }
+
+        private void MenuClickCallback(object sender, EventArgs e)
+        {
+            
         }
     }
 }

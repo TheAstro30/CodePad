@@ -4,6 +4,7 @@
  * Provided AS-IS with no warranty expressed or implied
  */
 using System;
+using System.IO;
 using System.Windows.Forms;
 using corelib.Helpers;
 using fctblib;
@@ -12,6 +13,10 @@ namespace CodePad.Forms
 {
     public sealed class FrmDocument : Form
     {
+        private bool _documentLoaded;
+
+        public FileInfo CurrentFileInfo { get; set; }
+
         public bool ContentsChanged { get; set; }
 
         public FastColoredTextBox Box { get; set; }
@@ -46,9 +51,9 @@ namespace CodePad.Forms
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.MdiFormClosing)
+            if (e.CloseReason == CloseReason.MdiFormClosing || !ContentsChanged)
             {
-                /* Do not trigger this multiple times on application exit */
+                /* Do not trigger this multiple times on application exit - or if text hasn't changed */
                 return;
             }
             /* Check current document doesn't need saving prior to closing this window/tab */
@@ -60,9 +65,43 @@ namespace CodePad.Forms
             base.OnFormClosing(e);
         }
 
+        public void LoadDocumentText(FileInfo fileInfo)
+        {
+            _documentLoaded = true;
+            CurrentFileInfo = fileInfo;
+            using (var fs = new FileStream(fileInfo.FullName, FileMode.Open))
+            {
+                using (var sr = new StreamReader(fs))
+                {
+                    Box.Text = sr.ReadToEnd();
+                }
+            }
+        }
+
+        public void SaveDocumentText(FileInfo fileInfo)
+        {
+            using (var fs = new FileStream(fileInfo.FullName, FileMode.Create))
+            {
+                using (var sw = new StreamWriter(fs))
+                {
+                    sw.Write(Box.Text);
+                    sw.Flush();
+                    fs.Flush();
+                }                
+            }
+            ContentsChanged = false;
+            /* Make sure we update the title text of this window */
+            Text = Path.GetFileName(fileInfo.FullName);
+        }
+
         /* Callbacks */
         private void TextChangedDelayed(object sender, EventArgs e)
         {            
+            if (_documentLoaded)
+            {
+                _documentLoaded = false;
+                return;                
+            }
             ContentsChanged = true;
         }
 
