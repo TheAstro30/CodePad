@@ -4,9 +4,9 @@
  * Provided AS-IS with no warranty expressed or implied
  */
 using System;
-using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using CodePad.Helpers;
 using corelib.Helpers;
 
 namespace CodePad.Forms
@@ -16,10 +16,16 @@ namespace CodePad.Forms
         /* This shit code will eventually be refactored into something more modular */
         private readonly bool _initialize;
 
+        private readonly ToolStripMenuItem _mnuFile;
+        private readonly ToolStripMenuItem _mnuHelp;
+
         public FrmEditor()
         {
             _initialize = true;
             InitializeComponent();
+            /* Set this as it's important */
+            Tabs.MainForm = this;
+            Tabs.OnTextBoxTextChanged += TextBoxTextChanged;
             var version = Assembly.GetExecutingAssembly().GetName().Version;
             Text = string.Format("CodePad - v{0}.{1}.{2} (build: {3}) ©2020 KangaSoft Software", version.Major, version.Minor,
                                  version.MinorRevision, version.Build);
@@ -31,13 +37,36 @@ namespace CodePad.Forms
             WindowState = SettingsManager.ApplicationSettings.ApplicationWindow.Maximized
                               ? FormWindowState.Maximized
                               : FormWindowState.Normal;
+            /* Set up menus */
+            _mnuFile = new ToolStripMenuItem {AutoSize = true, Text = @"&File"};
+            _mnuFile.DropDownItems.AddRange(
+                new ToolStripItem[]
+                    {
+                        new ToolStripMenuItem("New", null, Menus.MenuClickCallback, Keys.Control | Keys.N),
+                        new ToolStripSeparator(), 
+                        new ToolStripMenuItem("Open", null, Menus.MenuClickCallback, Keys.Control | Keys.O),
+                        new ToolStripMenuItem("Save", null, Menus.MenuClickCallback, Keys.Control | Keys.S),
+                        new ToolStripMenuItem("Save as...", null, Menus.MenuClickCallback, Keys.Control | Keys.Shift | Keys.S),
+                        new ToolStripSeparator(),
+                        new ToolStripMenuItem("Close", null, Menus.MenuClickCallback, Keys.Control | Keys.F4),
+                        new ToolStripSeparator(),
+                        new ToolStripMenuItem("Print", null, Menus.MenuClickCallback, Keys.Control | Keys.P),
+                        new ToolStripSeparator(),
+                        new ToolStripMenuItem("Exit", null, Menus.MenuClickCallback, Keys.Alt | Keys.F4)
+                    });
+            _mnuHelp = new ToolStripMenuItem {AutoSize = true, Text = @"&Help"};
+            _mnuHelp.DropDownItems.AddRange(new ToolStripItem[]
+                                                {
+                                                    new ToolStripMenuItem("About", null, Menus.MenuClickCallback, Keys.None) 
+                                                });
+            mnuMain.Items.AddRange(new ToolStripItem[] {_mnuFile, _mnuHelp});
             _initialize = false;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             /* Enumerate recently opened file(s) list and reopen documents */
-            CreateTab();
+            Tabs.CreateTab();
             base.OnLoad(e);
         }
 
@@ -76,108 +105,11 @@ namespace CodePad.Forms
             base.OnFormClosing(e);
         }
 
-        private void itmNew_Click(object sender, EventArgs e)
-        {
-            //temporary code
-            CreateTab();
-        }
-
-        private void itmOpen_Click(object sender, EventArgs e)
-        {
-            OpenFile();
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            SaveFile(GetActiveDocument());
-        }
-
-        /* File operations */
-        private void OpenFile()
-        {
-            using (var ofd = new OpenFileDialog{Title = @"Select a file to open"})
-            {
-                if (ofd.ShowDialog(this) == DialogResult.Cancel)
-                {
-                    return;
-                }
-                var info = new FileInfo(ofd.FileName);
-                CreateTab(info);
-            }
-        }
-
-        private void SaveFile(FrmDocument f)
-        {
-            if (f == null)
-            {
-                return;
-            }
-            if (f.Text == @"Untitled.txt")
-            {
-                SaveFileAs(f);
-                return;
-            }
-            f.SaveDocumentText(f.CurrentFileInfo);
-        }
-
-        private void SaveFileAs(FrmDocument f)
-        {
-            if (f == null)
-            {
-                return;
-            }
-            using (var sfd = new SaveFileDialog{Title = @"Select the file to save"})
-            {
-                if (sfd.ShowDialog(this) == DialogResult.Cancel)
-                {
-                    return;
-                }
-                var info = new FileInfo(sfd.FileName);
-                f.CurrentFileInfo = info;
-                f.SaveDocumentText(info);
-            }
-        }
-
-        /* Private methods */
-        private void CreateTab(FileInfo fileInfo)
-        {
-            var f = CreateTab(Path.GetFileName(fileInfo.FullName));
-            /* Now, load the file into the text box */
-            f.LoadDocumentText(fileInfo);
-        }
-
-        private FrmDocument CreateTab(string name = @"Untitled.txt")
-        {
-            return NewDocumentWindow(name);
-        }
-
-        private FrmDocument NewDocumentWindow(string name)
-        {
-            var f = new FrmDocument
-                        {
-                            Text = name,
-                            MdiParent = this
-                        };
-            f.Show();
-            f.Box.TextChangedDelayed += TextBoxTextChanged;
-            return f;
-        }
-
-        private FrmDocument GetActiveDocument()
-        {
-            var f = (FrmDocument)ActiveMdiChild;
-            return f;
-        }
-
         /* Callbacks */
         private void TextBoxTextChanged(object sender, EventArgs e)
         {
             /* We use this event to update the status bar */
-        }
-
-        private void MenuClickCallback(object sender, EventArgs e)
-        {
-            
+            System.Diagnostics.Debug.Print("Firing text change: " + DateTime.Now);
         }
     }
 }

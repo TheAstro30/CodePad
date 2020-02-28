@@ -64,6 +64,10 @@
     <Compile Include="Forms\FrmEditor.Designer.cs">
       <DependentUpon>FrmEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FileFilters.cs" />
+    <Compile Include="Helpers\FileOperations.cs" />
+    <Compile Include="Helpers\Menus.cs" />
+    <Compile Include="Helpers\Tabs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmAbout.resx">
@@ -80,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

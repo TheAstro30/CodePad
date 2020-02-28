@@ -30,45 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditor));
             this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.itmNew = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
+            this.toolBar = new System.Windows.Forms.ToolStrip();
             this.mdiTab = new corelib.Controls.MdiTab.MdiTabStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.itmOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuMain
             // 
             this.mnuMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.mnuMain.Size = new System.Drawing.Size(705, 24);
             this.mnuMain.TabIndex = 0;
-            this.mnuMain.Text = "menuStrip1";
-            // 
-            // mnuFile
-            // 
-            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itmNew,
-            this.toolStripMenuItem1,
-            this.itmOpen,
-            this.toolStripMenuItem2});
-            this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(37, 20);
-            this.mnuFile.Text = "&File";
-            // 
-            // itmNew
-            // 
-            this.itmNew.Name = "itmNew";
-            this.itmNew.Size = new System.Drawing.Size(152, 22);
-            this.itmNew.Text = "New";
-            this.itmNew.Click += new System.EventHandler(this.itmNew_Click);
             // 
             // statusBar
             // 
@@ -78,44 +52,33 @@
             this.statusBar.Size = new System.Drawing.Size(705, 22);
             this.statusBar.TabIndex = 4;
             // 
+            // toolBar
+            // 
+            this.toolBar.GripMargin = new System.Windows.Forms.Padding(5, 2, 2, 2);
+            this.toolBar.Location = new System.Drawing.Point(0, 24);
+            this.toolBar.Name = "toolBar";
+            this.toolBar.Size = new System.Drawing.Size(705, 25);
+            this.toolBar.TabIndex = 6;
+            this.toolBar.Text = "toolStrip1";
+            // 
             // mdiTab
             // 
-            this.mdiTab.Location = new System.Drawing.Point(0, 24);
+            this.mdiTab.GripMargin = new System.Windows.Forms.Padding(5, 2, 2, 2);
+            this.mdiTab.Location = new System.Drawing.Point(0, 49);
             this.mdiTab.Name = "mdiTab";
-            this.mdiTab.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.mdiTab.SelectedTab = null;
-            this.mdiTab.ShowItemToolTips = false;
             this.mdiTab.Size = new System.Drawing.Size(705, 25);
-            this.mdiTab.TabIndex = 2;
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // itmOpen
-            // 
-            this.itmOpen.Name = "itmOpen";
-            this.itmOpen.ShortcutKeyDisplayString = "Ctrl+O";
-            this.itmOpen.Size = new System.Drawing.Size(152, 22);
-            this.itmOpen.Text = "Open";
-            this.itmOpen.Click += new System.EventHandler(this.itmOpen_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.ShortcutKeyDisplayString = "Ctrl+S";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem2.Text = "Save";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.mdiTab.TabIndex = 8;
+            this.mdiTab.Text = "mdiTabStrip1";
             // 
             // FrmEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 410);
-            this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mdiTab);
+            this.Controls.Add(this.statusBar);
+            this.Controls.Add(this.toolBar);
             this.Controls.Add(this.mnuMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -123,8 +86,6 @@
             this.Name = "FrmEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CodePad";
-            this.mnuMain.ResumeLayout(false);
-            this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,13 +94,9 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mnuMain;
-        private System.Windows.Forms.ToolStripMenuItem mnuFile;
-        private System.Windows.Forms.ToolStripMenuItem itmNew;
-        private corelib.Controls.MdiTab.MdiTabStrip mdiTab;
         private System.Windows.Forms.StatusStrip statusBar;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem itmOpen;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStrip toolBar;
+        private corelib.Controls.MdiTab.MdiTabStrip mdiTab;
 
 
     }

@@ -1,19 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿/* CodePad
+ * Written by Jason James Newland
+ * Copyright (C) 2020
+ * Provided AS-IS with no warranty expressed or implied
+ */
+using System.Reflection;
+using corelib.Controls;
 
 namespace CodePad.Forms
 {
-    public partial class FrmAbout : Form
+    public partial class FrmAbout : FormEx
     {
         public FrmAbout()
         {
             InitializeComponent();
+            pnlIcon.BackgroundImage = Properties.Resources.about.ToBitmap();
+
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            lblVersion.Text = string.Format("Version: {0}.{1}.{2} (build: {3})", version.Major, version.Minor,
+                                 version.MinorRevision, version.Build);
         }
     }
 }

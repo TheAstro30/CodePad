@@ -25,13 +25,15 @@ namespace CodePad.Forms
         {
             ShowInTaskbar = false;
             ShowIcon = false;
-
+            /* Initialize new FCTB and set basic settings of document window */
             Box = new FastColoredTextBox
                       {
                           Dock = DockStyle.Fill,
                           Zoom = SettingsManager.ApplicationSettings.EditorWindow.Zoom
                       };
             Controls.Add(Box);
+
+            BackColor = Box.BackColor;
 
             Box.TextChangedDelayed += TextChangedDelayed;
             Box.ZoomChanged += ZoomChanged;

@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Controls\FormEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controls\MdiTab\MdiTabStrip.cs">
       <SubType>Component</SubType>
     </Compile>
