@@ -37,7 +37,6 @@ namespace corelib.Controls.MdiTab
             _inactiveBorderColor = DefaultInactiveBorderColor;
             _activeIsBold = DefaultActiveIsBold;
             _drawBorder = DefaultDrawBorder;
-            //Renderer = new ToolStripSystemRenderer();
         }
        
         static MdiTabStrip()
@@ -114,30 +113,11 @@ namespace corelib.Controls.MdiTab
             base.OnItemAdded(e);
         }
 
-        //[Browsable(false)]
-        //public new ToolStripRenderMode RenderMode
-        //{
-        //    get { return ToolStripRenderMode.Custom; }
-        //}        
-
-        //[Browsable(false)]
-        //public new ToolStripGripStyle GripStyle
-        //{
-        //    get { return ToolStripGripStyle.Hidden; }
-        //}
-
         [Browsable(false)]
         public override ToolStripItemCollection Items
         {
             get { return base.Items; }
         }
-
-        //[Browsable(false)]
-        //public new bool ShowItemToolTips
-        //{
-        //    get { return false; }
-        //    set { base.ShowItemToolTips = false; }
-        //}
 
         /* Public interface */
         [Category("Appearance"), DefaultValue(typeof(Color), "ControlText")]

@@ -4,6 +4,7 @@
  * Provided AS-IS with no warranty expressed or implied
  */
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using CodePad.Forms;
 
@@ -46,7 +47,7 @@ namespace CodePad.Helpers
             {
                 return;
             }
-            using (var sfd = new SaveFileDialog{Title = @"Select the filename to save as"})
+            using (var sfd = new SaveFileDialog{Title = string.Format(@"Select the filename to save {0} as...",f.Text)})
             {
                 sfd.Filter = FileFilters.GetFilters();
                 sfd.FileName = Path.GetFileNameWithoutExtension(f.Text);
@@ -57,7 +58,15 @@ namespace CodePad.Helpers
                 }
                 var info = new FileInfo(sfd.FileName);
                 f.CurrentFileInfo = info;
-                f.SaveDocumentText(info);
+                f.SaveDocumentText(info);                
+            }
+        }
+
+        public static void SaveAllFiles()
+        {
+            foreach (var d in from FrmDocument d in Tabs.MainForm.MdiChildren where d != null && d.ContentsChanged select d)
+            {
+                SaveFile(d);
             }
         }
     }

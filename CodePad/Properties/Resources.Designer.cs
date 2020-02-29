@@ -69,5 +69,55 @@ namespace CodePad.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon fileNew {
+            get {
+                object obj = ResourceManager.GetObject("fileNew", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon fileOpen {
+            get {
+                object obj = ResourceManager.GetObject("fileOpen", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon filePrint {
+            get {
+                object obj = ResourceManager.GetObject("filePrint", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon fileSave {
+            get {
+                object obj = ResourceManager.GetObject("fileSave", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon fileSaveAll {
+            get {
+                object obj = ResourceManager.GetObject("fileSaveAll", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

@@ -4,9 +4,11 @@
  * Provided AS-IS with no warranty expressed or implied
  */
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using CodePad.Forms;
+using corelib.Helpers;
 
 namespace CodePad.Helpers
 {
@@ -31,11 +33,18 @@ namespace CodePad.Helpers
 
         private static FrmDocument NewDocumentWindow(string name)
         {
+            var index = SettingsManager.ApplicationSettings.ApplicationWindow.Theme;
             var f = new FrmDocument
                         {
                             Text = name,
-                            MdiParent = MainForm
+                            MdiParent = MainForm,
+                            Box =
+                                {
+                                    BackColor = index == 1 ? Color.DimGray : Color.White,
+                                    ForeColor = index == 1 ? Color.FloralWhite : Color.Black
+                                }
                         };
+            f.BackColor = f.Box.BackColor;
             f.Show();
             f.Box.TextChangedDelayed += TextBoxTextChanged;
             return f;

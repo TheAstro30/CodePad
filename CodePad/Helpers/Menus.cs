@@ -6,6 +6,8 @@
 using System;
 using System.Windows.Forms;
 using CodePad.Forms;
+using corelib.Classes.Theme;
+using corelib.Helpers;
 
 namespace CodePad.Helpers
 {
@@ -20,7 +22,8 @@ namespace CodePad.Helpers
             {
                 return;
             }
-            switch (item.Text.ToUpper())
+            var id = string.IsNullOrEmpty(item.Text) ? item.Tag.ToString() : item.Text.ToUpper();
+            switch (id)
             {
                 case "NEW":
                     Tabs.CreateTab();
@@ -36,6 +39,10 @@ namespace CodePad.Helpers
 
                 case "SAVE AS...":
                     FileOperations.SaveFileAs(doc);
+                    break;
+
+                case "SAVE ALL":
+                    FileOperations.SaveAllFiles();
                     break;
 
                 case "CLOSE":
@@ -63,6 +70,30 @@ namespace CodePad.Helpers
                     }
                     break;
             }
+        }
+
+        public static void MenuThemeClickCallback(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (item == null)
+            {
+                return;
+            }
+            int index;
+            if (!Int32.TryParse(item.Tag.ToString(), out index))
+            {
+                return;
+            }
+            ThemeManager.SetTheme(index);
+            SettingsManager.ApplicationSettings.ApplicationWindow.Theme = index;
+            /* Uncheck any currently checked items */
+            var parent = (ToolStripMenuItem)item.OwnerItem;
+            foreach (ToolStripMenuItem subItem in parent.DropDownItems)
+            {
+                subItem.Checked = false;
+            }
+            /* Check selected preset */
+            item.Checked = true;
         }
     }
 }

@@ -87,15 +87,16 @@ namespace corelib.Controls.MdiTab
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
+            /* Draw the "close" button */
             var g = e.Graphics;
             var blank = DropDownButtonBounds;
             var rxx = blank.X + 2;
             var rsize = blank.Width - 4;
             var r = new Rectangle(rxx, rsize, rsize, rsize);
-            using (Brush b = new SolidBrush(BackColor))
-            {
-                g.FillRectangle(b, blank);
-            }
+            //using (Brush b = new SolidBrush(BackColor))
+            //{
+            //    g.FillRectangle(b, blank);
+            //}
             g.SmoothingMode = SmoothingMode.AntiAlias;
             using (var p = new Pen(CloseBoxColor, 2.0F))
             {
@@ -149,7 +150,6 @@ namespace corelib.Controls.MdiTab
                 return IsSelectedTab ? ActiveForeColor : InactiveForeColor;
             }
         }
-
 
         /* Public interface */
         [Browsable(false)]

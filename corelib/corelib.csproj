@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,7 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Theme\BaseRenderer.cs" />
+    <Compile Include="Classes\Theme\ColorTables\CustomizableColorTable.cs" />
+    <Compile Include="Classes\Theme\Presets\DarkPreset.cs" />
+    <Compile Include="Classes\Theme\ColorTables\PresetColorTable.cs" />
+    <Compile Include="Classes\Theme\Presets\OfficeClassicPreset.cs" />
+    <Compile Include="Classes\Theme\Presets\SystemPreset.cs" />
     <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Classes\Theme\ThemeManager.cs" />
     <Compile Include="Controls\FormEx.cs">
       <SubType>Form</SubType>
     </Compile>

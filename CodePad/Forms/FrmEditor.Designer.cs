@@ -57,6 +57,7 @@
             this.toolBar.GripMargin = new System.Windows.Forms.Padding(5, 2, 2, 2);
             this.toolBar.Location = new System.Drawing.Point(0, 24);
             this.toolBar.Name = "toolBar";
+            this.toolBar.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
             this.toolBar.Size = new System.Drawing.Size(705, 25);
             this.toolBar.TabIndex = 6;
             this.toolBar.Text = "toolStrip1";

@@ -121,4 +121,19 @@
   <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\about.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fileNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\fileNew.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fileOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\fileOpen.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filePrint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\filePrint.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fileSave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\fileSave.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fileSaveAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\fileSaveAll.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

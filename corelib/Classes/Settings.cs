@@ -39,6 +39,9 @@ namespace corelib.Classes
 
             [XmlAttribute("maximized")]
             public bool Maximized { get; set; }
+
+            [XmlAttribute("theme")]
+            public int Theme { get; set; }
         }
 
         public class Editor
