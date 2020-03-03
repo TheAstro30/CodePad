@@ -106,7 +106,7 @@
             this.lblContributors.Name = "lblContributors";
             this.lblContributors.Size = new System.Drawing.Size(236, 59);
             this.lblContributors.TabIndex = 6;
-            this.lblContributors.Text = "Contributors: Adam Oldham, beep, Pavel Torgashov, Ryan Alexander";
+            this.lblContributors.Text = "Contributors: Adam Oldham, SAM Enterprise, Pavel Torgashov, Ryan Alexander";
             // 
             // lblCopyright
             // 

@@ -1,6 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿/* CodePad
+ * Written by Jason James Newland
+ * Copyright (C) 2020
+ * Provided AS-IS with no warranty expressed or implied
+ */
+using System;
 using System.Windows.Forms;
 using CodePad.Forms;
 
@@ -8,9 +11,6 @@ namespace CodePad
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {

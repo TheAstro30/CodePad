@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("FastColoredTextBox")]
-[assembly: AssemblyDescription("TextBox library with syntax highlighting")]
+[assembly: AssemblyDescription("Fast сolored textbox control")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Pavel Torgashov")]
 [assembly: AssemblyProduct("fctblib")]
-[assembly: AssemblyCopyright("Copyright © Pavel Torgashov 2011 - 2016")]
+[assembly: AssemblyCopyright("© Pavel Torgashov, 2011-2016, pavel_torgashov@ukr.net.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.1.136.4")]
-[assembly: AssemblyFileVersion("2.1.138.4")]
+[assembly: AssemblyVersion("2.16.25.0")]
+[assembly: AssemblyFileVersion("2.16.24.0")]

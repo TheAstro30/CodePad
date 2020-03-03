@@ -4,7 +4,7 @@
  * Provided AS-IS with no warranty expressed or implied
  */
 using System.Reflection;
-using corelib.Controls;
+using CodePad.Controls;
 
 namespace CodePad.Forms
 {

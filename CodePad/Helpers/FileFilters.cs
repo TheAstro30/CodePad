@@ -18,7 +18,7 @@ namespace CodePad.Helpers
             public string Description { get; set; }
         }
 
-        private static readonly List<Filter> Associations = new List<Filter>()
+        private static readonly List<Filter> Associations = new List<Filter>
                                                                 {
                                                                     new Filter
                                                                         {
