@@ -121,6 +121,12 @@
   <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\about.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fileClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\fileClose.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fileExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\fileExit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fileNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\Toolbar\fileNew.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,5 +141,11 @@
   </data>
   <data name="fileSaveAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\Toolbar\fileSaveAll.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fileSaveAs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\fileSaveAs.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="viewTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Toolbar\viewTheme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

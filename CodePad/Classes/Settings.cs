@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Xml.Serialization;
 using CodePad.Utils;
+using fctblib.Highlight;
 
 namespace CodePad.Classes
 {
@@ -48,6 +49,12 @@ namespace CodePad.Classes
         {
             [XmlAttribute("zoom")]
             public int Zoom { get; set; }
+
+            [XmlAttribute("autoHighlight")]
+            public bool AutoHighLight { get; set; }
+
+            [XmlAttribute("syntaxLanguage")]
+            public Language SyntaxLanguage { get; set; }
         }
 
         public class FileHistory
@@ -74,6 +81,8 @@ namespace CodePad.Classes
             ApplicationWindow.Location = new Point(150, 50);
 
             EditorWindow.Zoom = 100;
+            EditorWindow.AutoHighLight = true;
+            EditorWindow.SyntaxLanguage = Language.Custom;
         }
     }
 }

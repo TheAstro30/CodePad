@@ -73,6 +73,26 @@ namespace CodePad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon fileClose {
+            get {
+                object obj = ResourceManager.GetObject("fileClose", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon fileExit {
+            get {
+                object obj = ResourceManager.GetObject("fileExit", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon fileNew {
             get {
                 object obj = ResourceManager.GetObject("fileNew", resourceCulture);
@@ -116,6 +136,26 @@ namespace CodePad.Properties {
         internal static System.Drawing.Icon fileSaveAll {
             get {
                 object obj = ResourceManager.GetObject("fileSaveAll", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon fileSaveAs {
+            get {
+                object obj = ResourceManager.GetObject("fileSaveAs", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon viewTheme {
+            get {
+                object obj = ResourceManager.GetObject("viewTheme", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

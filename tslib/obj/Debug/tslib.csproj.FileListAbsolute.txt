@@ -1,4 +1,0 @@
-D:\Data\CSharp\CodePad\TabStrip\bin\Debug\tslib.dll
-D:\Data\CSharp\CodePad\TabStrip\bin\Debug\tslib.pdb
-D:\Data\CSharp\CodePad\TabStrip\obj\Debug\tslib.dll
-D:\Data\CSharp\CodePad\TabStrip\obj\Debug\tslib.pdb

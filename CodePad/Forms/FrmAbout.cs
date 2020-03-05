@@ -1,4 +1,4 @@
-﻿/* CodePad
+/* CodePad
  * Written by Jason James Newland
  * Copyright (C) 2020
  * Provided AS-IS with no warranty expressed or implied

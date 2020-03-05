@@ -16,46 +16,33 @@ namespace CodePad.Helpers
         {
             public string Extension { get; set; }
             public string Description { get; set; }
+
+            public Filter()
+            {
+                /* Default empty constructor */
+            }
+
+            public Filter(string ext, string desc)
+            {
+                Extension = ext;
+                Description = desc;
+            }
         }
 
         private static readonly List<Filter> Associations = new List<Filter>
                                                                 {
-                                                                    new Filter
-                                                                        {
-                                                                            Extension = "*.txt",
-                                                                            Description = "Text file (*.txt)"
-                                                                        },
-                                                                    new Filter
-                                                                        {
-                                                                            Extension = "*.rtf",
-                                                                            Description = "Rich Text Format (*.rtf)"
-                                                                        },
-                                                                    new Filter
-                                                                        {
-                                                                            Extension = "*.htm;*.html",
-                                                                            Description = "HTML file (*.htm,*.html)"
-                                                                        },
-                                                                    new Filter
-                                                                        {
-                                                                            Extension = "*.css",
-                                                                            Description =
-                                                                                "Cascading Style Sheet (*.css)"
-                                                                        },
-                                                                    new Filter
-                                                                        {
-                                                                            Extension = "*.cs",
-                                                                            Description = "CSharp file (*.cs)"
-                                                                        },
-                                                                    new Filter
-                                                                        {
-                                                                            Extension = "*.vb",
-                                                                            Description = "Visual Basic file (*.vb)"
-                                                                        },
-                                                                    new Filter
-                                                                        {
-                                                                            Extension = "*.php",
-                                                                            Description = "PHP file (*.php)"
-                                                                        }
+                                                                    new Filter("*.txt", "Text file"),
+                                                                    new Filter("*.rtf", "Rich Text Format file (*.rtf)"),
+                                                                    new Filter("*.xml", "XML file (*.xml)"),
+                                                                    new Filter("*.htm", "Hyper Text Mark-Up file (*.htm)"),
+                                                                    new Filter("*.html", "Hyper Text Mark-Up Language file (*.html)"),
+                                                                    new Filter("*.css", "Cascading Style Sheet file (*.css"),
+                                                                    new Filter("*.php", "PHP file (*.php)"),
+                                                                    new Filter("*.sql", "SQL file (*.sql)"),
+                                                                    new Filter("*.js", "Java Script file (*.js)"),
+                                                                    new Filter("*.cs", "CSharp file (*.cs)"),
+                                                                    new Filter("*.vb", "Visual Basic file (*.vb)"),
+                                                                    new Filter("*.vba", "Visual Basic Script file"),
                                                                 };
 
         public static string GetFilters()

@@ -1,4 +1,0 @@
-D:\Data\CSharp\CodePad\fctblib\bin\Debug\fctblib.dll
-D:\Data\CSharp\CodePad\fctblib\bin\Debug\fctblib.pdb
-D:\Data\CSharp\CodePad\fctblib\obj\Debug\fctblib.dll
-D:\Data\CSharp\CodePad\fctblib\obj\Debug\fctblib.pdb

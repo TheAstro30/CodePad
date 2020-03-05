@@ -1,4 +1,0 @@
-D:\Data\CSharp\CodePad\TabStrip\bin\Debug\TabStrip.dll
-D:\Data\CSharp\CodePad\TabStrip\bin\Debug\TabStrip.pdb
-D:\Data\CSharp\CodePad\TabStrip\obj\Debug\TabStrip.dll
-D:\Data\CSharp\CodePad\TabStrip\obj\Debug\TabStrip.pdb
